@@ -2,7 +2,7 @@ require 'net/http'
 
 namespace :team_notifications do
   task :started do
-    team_notify "%{deployer} is deploying %{application}#{':'+branch if branch != 'master'}#{' to '+stage if stage != 'production'}"
+    team_notify "%{deployer} is deploying %{application}#{':'+branch if branch != 'master'}#{' to '+stage if stage != 'production'}, commit: %{commit_message}"
   end
 
   task :finished do
