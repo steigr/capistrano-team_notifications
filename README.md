@@ -10,7 +10,7 @@ This gem sends notifications for all team members via [Space notifications](http
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano-team_notifications', group: [:development]
+    gem 'capistrano-team_notifications', group: [:development], require: false
 
 or if you use Capistrano v2
 

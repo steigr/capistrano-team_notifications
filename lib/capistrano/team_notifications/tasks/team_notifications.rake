@@ -12,8 +12,9 @@ namespace :team_notifications do
   def team_notify(message)
     deployer = fetch(:deployer,  `git config user.name`.chomp)
     application = fetch(:application)
+    commit_message = `git log --oneline -n 1 | cut -f2- -d' '`.chomp
 
-    message = message % {deployer: deployer, application: application}
+    message = message % {deployer: deployer, application: application, commit_message: commit_message}
 
     nc_notify(message)
   end
