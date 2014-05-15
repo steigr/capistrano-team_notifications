@@ -33,8 +33,11 @@ require 'capistrano/team_notifications'
 add to deploy.rb file
 
 ```ruby
-set :team_notifications_token, "HERE_YOUR_SPACE_NOTIFICATIONS_TOKEN"
+set :team_notifications_tokens, {provider: 'token'}
 ```
+
+provider may be one of 'space_notice' or 'dna'.
+
 
 And finally give this link
 

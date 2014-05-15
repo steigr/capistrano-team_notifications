@@ -21,7 +21,7 @@ namespace :team_notifications do
 
   def nc_notify(message)
     notifications_tokens = fetch(:team_notifications_tokens)
-    raise "Undefined capistrano-team_notifications token" if notifications_token.nil? || notifications_token.empty?
+    raise "Undefined capistrano-team_notifications token" if notifications_tokens.nil? || notifications_tokens.empty?
     notifications_tokens.keys.each do |push_service,token|
       case push_service.to_s
       when 'space_notice'
