@@ -20,10 +20,10 @@ namespace :team_notifications do
   end
 
   def nc_notify(message)
-    team_notifications_tokens = fetch(:team_notifications_tokens)
-    puts team_notifications_tokens.inspect
-    raise "Undefined capistrano-team_notifications token" if team_notifications_tokens.nil? || team_notifications_tokens.empty?
-    team_notifications_tokens.each do |push_service,token|
+    notifications_tokens = fetch(:team_notifications_tokens)
+    puts notifications_tokens.inspect
+    raise "Undefined capistrano-team_notifications token" if notifications_tokens.nil? || notifications_tokens.empty?
+    notifications_tokens.each do |push_service,token|
       case push_service.to_s
       when 'space_notice'
         http = Net::HTTP.new("space-notice.com", 443)
